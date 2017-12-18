@@ -1,0 +1,41 @@
+body{
+    font-family: sans-serif;
+
+}
+
+#wrapper{
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+#form{
+    vertical-align:top;
+    padding: 20px;
+    display: inline-block;
+    width: 15%; 
+}
+
+#submit{
+    padding: 15px;
+    float:right;
+}
+
+#results {
+    display: inline-block;
+    width:80%;
+}
+
+.result{
+    padding:10px;
+    margin: 20px 0 0 0;
+    border: 1px solid #ddd;
+    -webkit-box-shadow: 7px 7px 31px -4px rgba(0,0,0,0.2);
+    -moz-box-shadow: 7px 7px 31px -4px rgba(0,0,0,0.2);
+    box-shadow: 7px 7px 31px -4px rgba(0,0,0,0.2);
+}
+
+.service_log{
+    margin: 5px 0 0 0;
+    font-size:0.8em;
+}

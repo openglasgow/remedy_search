@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <link rel= "stylesheet" type= "text/css" href= {{url_for('static', filename='app.css')}}>
+        <title>Remedy ES search demo</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <ul>
+                        {% for message in messages %}
+                            <li>{{ message[1] }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+            <div id="form">
+                <form action="" method="post">
+                    {{ form.csrf }}
+         
+                    <div class="input text">
+                        {{ form.query.label }} 
+                        <br>
+                        {{ form.query }}
+                    </div>
+         
+                    <div id="submit" class="input submit">
+                        <input type="submit" value="Submit" />
+                    </div>
+                </form>
+            </div>
+            <div id="results">
+                <h2> Results </h2>
+                {% if results  %}
+                        {% for result in results %}
+                            <div class="result">
+                                Call ID: {{ result.call_id }}
+                                <div class="service_log">
+                                    Service Request Log: {{result.service_request_log | truncate(300)}}
+                                </div>
+                            </div>
+                        {% endfor %}
+                {% endif  %}
+            </div>
+        </div>
+    </body>
+</html>
